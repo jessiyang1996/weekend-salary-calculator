@@ -1,0 +1,37 @@
+#headerTitle{
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    background-color: #556B2F;
+    color: white;
+}
+
+main, footer{
+    max-width: 760px;
+    margin: auto;
+}
+
+#submitButton{
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* ============ Table ============ */
+table, th, td{
+    border: 1px solid black;
+}
+
+#table{
+    text-align: center;
+}
+
+.firstRow{
+    background-color: #C4A484;
+    width: 150px;
+    height: 35px;
+}
+
+/* Monthly Total Footer */
+#monthlyTotal{
+    text-align:right;
+}
