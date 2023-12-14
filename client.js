@@ -28,7 +28,7 @@ function submitButton(){
             <td data-testid="idInput">${idInput}</td>
             <td data-testid="titleInput">${titleInput}</td>
             <td data-testid="annualSalaryInput">$${annualSalaryInput}</td>
-            <!--<td id=deleteButton onclick="delete(event)">DELETE</td>-->
+            <!--<td id=deleteButton onclick="deleteButton(event)">DELETE</td>-->
         </tr>
     `
 
@@ -40,8 +40,11 @@ function submitButton(){
     
     // Sum up the data in the totalArray
     totalSum=sumOfArray(totalArray);
-    console.log("SUM OF ARRAY ", totalArray);
+    console.log("SUM OF ARRAY ", totalSum);
 
+    // Divide annual salary by 12 to get total monthly pay
+    monthlyTotal();
+    
     form.reset(); // resets the form 
 }
 
@@ -49,24 +52,31 @@ function submitButton(){
 function sumOfArray(anArray){
     let result=0;
     i=0;
-
+    // console.log(anArray);
     for(i=0; i<anArray.length; i++){
         console.log("in sumOfArray for-loop");
+        console.log(result);
         result += anArray[i];
     }
-
-    // for(let number of anArray){
-    //     totalSum += number;
-    // }
-    
+    //console.log(result);
     return result;
 }
 
+// function to get the monthly total and add to the DOM
 function monthlyTotal(){
     console.log( "IN monthlyTotal FUNCTION")
     // target the area
     let monthlyTotalElement = document.getElementById("monthlyTotal");
     // console.log(monthlyTotalElement); // It selects the right one
+    // get the yearly total and divide by 12 to get the monthly
+    roundedMonthlyTotalPay = Math.floor(totalSum / 12);
+    console.log("Rounded Monthly Total Pay:", roundedMonthlyTotalPay);
     // swap the things in the document
-    //monthlyTotalElement.innerHTML += `Annual Salary: ${}`
+    monthlyTotalElement.innerHTML = `Total Monthly: ${roundedMonthlyTotalPay}`;
 };
+
+function deleteButton(){
+    console.log("in deleteButton(event)");
+    tableElement.innerHTML
+}
+
