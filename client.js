@@ -6,6 +6,9 @@ console.log( "HELLO FROM CLIENT.JS");
 let totalArray=[]; // this array will story the total
 let totalSum=0; // this number is the totalyArray added together
 
+
+
+
 // Submit Button
 function submitButton(){
     console.log("IN submitButton Function");
@@ -48,6 +51,10 @@ function submitButton(){
     form.reset(); // resets the form 
 }
 
+
+
+// ================ SIDE QUESTS ================
+
 // Function to find the sum of all integers in the totalArray
 function sumOfArray(anArray){
     let result=0;
@@ -72,7 +79,12 @@ function monthlyTotal(){
     roundedMonthlyTotalPay = Math.floor(totalSum / 12);
     console.log("Rounded Monthly Total Pay:", roundedMonthlyTotalPay);
     // swap the things in the document
-    monthlyTotalElement.innerHTML = `Total Monthly: ${roundedMonthlyTotalPay}`;
+    if(roundedMonthlyTotalPay < 20000){
+        monthlyTotalElement.innerHTML = `Total Monthly: ${roundedMonthlyTotalPay}`;
+    } else{
+        monthlyTotalElement.innerHTML =
+        `<p id="monthlyTotal" class="exeeded20000">Total Monthly: ${roundedMonthlyTotalPay}</p>`
+    }
 };
 
 function deleteButton(){

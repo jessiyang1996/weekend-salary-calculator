@@ -7,7 +7,7 @@
 }
 
 main, footer{
-    max-width: 760px;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -34,4 +34,8 @@ table, th, td{
 /* Monthly Total Footer */
 #monthlyTotal{
     text-align:right;
+}
+
+.exeeded20000{
+    background-color: red;
 }
